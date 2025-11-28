@@ -1,8 +1,8 @@
 package services
 
 import (
-	"main.go/order-service/clients"
-	"main.go/order-service/models"
+	"order-service/clients"
+	"order-service/models"
 )
 
 var orders = []models.Order{

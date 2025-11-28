@@ -1,18 +1,19 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
-	"main.go/user-service/handlers"
+	"fmt"
+	"user-service/config"
 )
 
+func main() {
 
-func main(){
+	config.LoadEnv()
 
+	port := config.GetEnv("APP_PORT")
 
-	app := fiber.New()
-
-	app.Get("/users", handlers.GetUsers)
-
-	app.Listen(":3001")
+	if port == "" {
+		port = "3001"
+	}
+	fmt.Println("User Service çalışıyor... Port:", port)
 
 }

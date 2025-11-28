@@ -1,8 +1,9 @@
 package handlers
 
 import (
+	"order-service/services"
+
 	"github.com/gofiber/fiber/v2"
-	"main.go/order-service/services"
 )
 
 func GetOrders(c *fiber.Ctx) error {

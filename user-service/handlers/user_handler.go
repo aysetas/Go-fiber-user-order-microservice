@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"main.go/user-service/services"
+	"user-service/services"
 )
 
 

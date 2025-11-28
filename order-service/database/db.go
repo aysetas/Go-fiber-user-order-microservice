@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"user-service/config"
-	"user-service/models"
+	"order-service/config"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -20,18 +19,15 @@ func ConnectDB() {
 	pass := config.GetEnv("DB_PASS")
 	dbName := config.GetEnv("DB_NAME")
 
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
 		user, pass, host, port, dbName,
 	)
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Fatal("Veritabanına bağlanamadı:", err)
+		log.Fatal("Veritabanına bağlanırken hata oluştu:", err)
 	}
 
 	DB = db
-	fmt.Println("✔ User Service DB bağlantısı başarılı!")
-
-
-	db.AutoMigrate(&models.User{})
+	fmt.Println("✔ Veritabanı bağlantısı başarılı!")
 }

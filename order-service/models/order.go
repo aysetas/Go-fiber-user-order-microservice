@@ -1,6 +1,6 @@
 package models
 
-import "main.go/order-service/clients"
+import "order-service/clients"
 
 type Order struct {
 	ID     int          `json:"id"`

@@ -1,6 +1,6 @@
 package services
 
-import "main.go/user-service/models"
+import "user-service/models"
 
 
 func GetAllUsers() []models.User{
